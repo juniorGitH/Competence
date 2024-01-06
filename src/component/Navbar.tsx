@@ -31,6 +31,10 @@ export default function Navbar() {
     // Faites défiler la page vers le haut lorsqu'un élément est cliqué
     window.scrollTo(0, 0);
   };
+const ajouterClass = () => {
+    
+    window.scrollTo(0, 0);
+  };
 
   const retrait = () => {
     setClickedIndex(null);
@@ -39,7 +43,7 @@ export default function Navbar() {
   return (
     <div className="NavBarre">
       <Link to="/" onClick={retrait}>
-        <div className="logo" title="Accueil">
+        <div className="logo" title="Accueil" onClick={() => ajouterClass()}>
           <img src={logo} alt="logo" />
         </div>
       </Link>
