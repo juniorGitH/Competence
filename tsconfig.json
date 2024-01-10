@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,5 +20,10 @@
     "jsx": "react",
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "img/**/*.png"]
+ "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.png", 
+    "src/declarations.d.ts"
+  ]
 }

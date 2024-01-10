@@ -32,11 +32,12 @@ export default function Navbar() {
     window.scrollTo(0, 0);
   };
 const ajouterClass = () => {
-    
+   // Faites défiler la page vers le haut lorsqu'un élément est cliqué 
     window.scrollTo(0, 0);
   };
 
   const retrait = () => {
+
     setClickedIndex(null);
   };
 
