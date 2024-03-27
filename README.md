@@ -1,61 +1,69 @@
 package com.example.weather;
-import com.example.weather.WeatherItem;
 
-import java.util.ArrayList;
-import java.util.List;
+public class WeatherItem {
+    private String title;
+    private String link;
+    private String description;
+    private String pubDate;
+    private String guid;
+    private String geoPoint;
 
-public class WeatherForecast {
-    private String locationTitle;
-    private String locationLink;
-    private String locationDescription;
-    private List<WeatherItem> weatherItems;
-
-    public WeatherForecast() {
-        weatherItems = new ArrayList<>();
+    public String getTitle() {
+        return title;
     }
 
-    public String getLocationTitle() {
-        return locationTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setLocationTitle(String locationTitle) {
-        this.locationTitle = locationTitle;
+    public String getLink() {
+        return link;
     }
 
-    public String getLocationLink() {
-        return locationLink;
+    public void setLink(String link) {
+        this.link = link;
     }
 
-    public void setLocationLink(String locationLink) {
-        this.locationLink = locationLink;
+    public String getDescription() {
+        return description;
     }
 
-    public String getLocationDescription() {
-        return locationDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setLocationDescription(String locationDescription) {
-        this.locationDescription = locationDescription;
+    public String getPubDate() {
+        return pubDate;
     }
 
-    public List<WeatherItem> getWeatherItems() {
-        return weatherItems;
+    public void setPubDate(String pubDate) {
+        this.pubDate = pubDate;
     }
 
-    public void addWeatherItem(WeatherItem weatherItem) {
-        weatherItems.add(weatherItem);
+    public String getGuid() {
+        return guid;
+    }
+
+    public void setGuid(String guid) {
+        this.guid = guid;
+    }
+
+    public String getGeoPoint() {
+        return geoPoint;
+    }
+
+    public void setGeoPoint(String geoPoint) {
+        this.geoPoint = geoPoint;
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Location: ").append(locationTitle).append("\n");
-        sb.append("Link: ").append(locationLink).append("\n");
-        sb.append("Description: ").append(locationDescription).append("\n");
-        sb.append("Weather Forecast:\n");
-        for (WeatherItem item : weatherItems) {
-            sb.append(item.toString()).append("\n");
-        }
-        return sb.toString();
+        return "Title: " + title + "\n" +
+                "Link: " + link + "\n" +
+                "Description: " + description + "\n" +
+                "Publication Date: " + pubDate + "\n" +
+                "GUID: " + guid + "\n" +
+                "Geographical Point: " + geoPoint;
     }
 }
+
