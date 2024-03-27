@@ -1,69 +1,63 @@
 package com.example.weather;
 
-public class WeatherItem {
-    private String title;
-    private String link;
-    private String description;
-    private String pubDate;
-    private String guid;
-    private String geoPoint;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
-    public String getTitle() {
-        return title;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.net.URL;
+
+public class WeatherParser {
+
+    public static WeatherForecast parseXML(String xmlData) {
+        WeatherForecast forecast = new WeatherForecast();
+
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document document = builder.parse(new URL(xmlData).openStream());
+
+            Element rss = document.getDocumentElement();
+            Element channel = (Element) rss.getElementsByTagName("channel").item(0);
+
+            // Extracting channel information
+            forecast.setLocationTitle(getValue(channel, "title"));
+            forecast.setLocationLink(getValue(channel, "link"));
+            forecast.setLocationDescription(getValue(channel, "description"));
+
+            // Extracting weather items
+            NodeList itemList = channel.getElementsByTagName("item");
+            for (int i = 0; i < itemList.getLength(); i++) {
+                Element item = (Element) itemList.item(i);
+                WeatherItem weatherItem = new WeatherItem();
+                weatherItem.setTitle(getValue(item, "title"));
+                weatherItem.setLink(getValue(item, "link"));
+                weatherItem.setDescription(getValue(item, "description"));
+                weatherItem.setPubDate(getValue(item, "pubDate"));
+                weatherItem.setGuid(getValue(item, "guid"));
+                weatherItem.setGeoPoint(getValue(item, "georss:point"));
+                forecast.addWeatherItem(weatherItem);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return forecast;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    private static String getValue(Element element, String tagName) {
+        NodeList nodeList = element.getElementsByTagName(tagName);
+        if (nodeList != null && nodeList.getLength() > 0) {
+            return nodeList.item(0).getTextContent();
+        }
+        return "";
     }
 
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getPubDate() {
-        return pubDate;
-    }
-
-    public void setPubDate(String pubDate) {
-        this.pubDate = pubDate;
-    }
-
-    public String getGuid() {
-        return guid;
-    }
-
-    public void setGuid(String guid) {
-        this.guid = guid;
-    }
-
-    public String getGeoPoint() {
-        return geoPoint;
-    }
-
-    public void setGeoPoint(String geoPoint) {
-        this.geoPoint = geoPoint;
-    }
-
-    @Override
-    public String toString() {
-        return "Title: " + title + "\n" +
-                "Link: " + link + "\n" +
-                "Description: " + description + "\n" +
-                "Publication Date: " + pubDate + "\n" +
-                "GUID: " + guid + "\n" +
-                "Geographical Point: " + geoPoint;
+    public static void main(String[] args) {
+        String xmlData = "https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2643123";
+        WeatherForecast forecast = parseXML(xmlData);
+        System.out.println(forecast);
     }
 }
 
