@@ -11,7 +11,8 @@ const Notification: React.FC = () => {
               <span className="participant">John Doe</span>    
             </div>
             <div className="conversation">
-              <span className="last-message">Hello!</span>
+              <span className=" last-message">Hello!</span>
+
             </div>
             {/*  d'autres conversations  */}
           </div>

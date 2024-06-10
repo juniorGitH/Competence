@@ -6,7 +6,7 @@ const Acueil: React.FC = () => {
     <>
       <div className="pag" id="accueil">
         <div className="page a">
-          <p className="presentation">
+          <p className="presentation text-67xl">
             Salut ! Je suis
             <span> Emmanuel AMELA </span> Étudiant Dev full stack
           </p>

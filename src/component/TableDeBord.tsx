@@ -6,81 +6,40 @@ const TableDeBord: React.FC = () => {
     <>
       <div>
         <div className="project-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Nom du Projet</th>
-                <th>Participant</th>
-                <th>Temps de Début</th>
-                <th>Durée</th>
-                <th>Coût</th>
-                <th>Type de Projet</th>
-                <th>État du Projet</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Projet A</td>
-                <td>John Doe</td>
-                <td>2023-01-01</td>
-                <td>3 mois</td>
-                <td>10 000 €</td>
-                <td>Web</td>
-                <td>En cours</td>
-                <td>
-                  <button onClick={() => console.log("Demander Modification")}>
-                    Demander Modification
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Projet B</td>
-                <td>Jane Doe</td>
-                <td>2023-02-15</td>
-                <td>2 mois</td>
-                <td>8 000 €</td>
-                <td>Application Mobile</td>
-                <td>Terminé</td>
-                <td>
-                  <button onClick={() => console.log("Télécharger")}>
-                    Télécharger
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Projet A</td>
-                <td>John Doe</td>
-                <td>2023-01-01</td>
-                <td>3 mois</td>
-                <td>10 000 €</td>
-                <td>Web</td>
-                <td>En cours</td>
-                <td>
-                  <button onClick={() => console.log("Demander Modification")}>
-                    Demander Modification
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Projet A</td>
-                <td>John Doe</td>
-                <td>2023-01-01</td>
-                <td>3 mois</td>
-                <td>10 000 €</td>
-                <td>Web</td>
-                <td>En cours</td>
-                <td>
-                  <button onClick={() => console.log("Demander Modification")}>
-                    Demander Modification
-                  </button>
-                </td>
-              </tr>
-              {/* Ajoutez d'autres lignes pour plus de projets */}
-            </tbody>
-          </table>
+           <table className="table-auto ">
+                    <thead className="bg-gradient-to-tl from-gray-800 to-blue-500 text-white" >
+                        <tr>
+                            <th className="border px-10 py-2">Nom du Projet</th>
+                            <th className="border px-10  py-2">Participant</th>
+                            <th className="border px-10  py-2">Temps de Début</th>
+                            <th className="border px-10  py-2">Durée</th>
+                            <th className="border px-4  py-2">Coût</th>
+                            <th className="border px-4  py-2">Type de Projet</th>
+                           <th className="border px-10  py-2">État du Projet</th>
+                            <th className="border px-10  py-2">Actions</th>
+                            {/* Ajoutez d'autres colonnes au besoin */}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                <td className="border px-10  py-2"></td>
+                                <td className="border px-10  py-2"></td>
+                                <td className="border px-10  py-2"></td>
+                                <td className="border px-10  py-2"></td>
+                                <td className="border px-10  py-2"></td>
+                                <td className="border px-10  py-2"></td>
+                                <td className="border px-10  py-2"></td>
+                               <td className="border px-10  py-2"></td>
+                                {/* Ajoutez d'autres colonnes au besoin */}
+                            </tr>
+                    
+
+                    </tbody>
+                </table>
         </div>
       </div>
+
       <General />
     </>
   );
