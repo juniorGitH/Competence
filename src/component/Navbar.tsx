@@ -10,18 +10,21 @@ interface MenuItem {
 
 export default function Navbar() {
   const [listM, setListM] = useState<MenuItem[]>([
-    { id: 2, nom: "Commandes", clanaM: "fas fa-shopping-cart" },
-    { id: 4, nom: "profil", clanaM: "far fa-user" }
+    { id: 2, nom: "Commander", clanaM: "fas fa-shopping-cart" },
+    { id: 1, nom: "Discussions", clanaM: "fas fa-comments" },
+    { id: 4, nom: "profile", clanaM: "far fa-user" },
+    { id: 3, nom: "Notification", clanaM: "far fa-bell" },
+    { id: 10, nom: "TableDeBord", clanaM: "fas fa-tachometer-alt" }
   ]);
 
   const [listM1, setListM1] = useState<MenuItem[]>([
-    { id: 1, nom: "Discussions", clanaM: "fas fa-comments" },
+   
+   
     { id: 5, nom: "Service", clanaM: "fas fa-cogs" },
     { id: 7, nom: "Inscription", clanaM: "fa-regular fa-user" },
-    { id: 3, nom: "Notification", clanaM: "far fa-bell" },
     { id: 8, nom: "Connexion", clanaM: "fa-solid fa-user" },
-    { id: 9, nom: "ContactDev", clanaM: "fa-solid fa-address-book" },
-    { id: 10, nom: "TableDeBord", clanaM: "fas fa-tachometer-alt" }
+    { id: 9, nom: "ContactDev", clanaM: "fa-solid fa-address-book" }
+   
   ]);
 
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);

@@ -10,6 +10,8 @@ import Inscription from './component/Inscription';
 import Layout from './component/Layout';
 import ContactDev from './component/ContactDev';
 import Discussions from './component/Discussions';
+import Profile from './component/Profile';
+import Commander from './component/Commander';
 
 function App(): JSX.Element {
   return (
@@ -25,6 +27,8 @@ function App(): JSX.Element {
             <Route path="/Service" element={<Service />} />
             <Route path="/ContactDev" element={<ContactDev />} />
             <Route path="/Discussions" element={<Discussions />} />
+            <Route path="/Profile" element={<Profile />} />
+            <Route path="/Commander" element={<Commander />} />
           </Route>
         </Routes>
       </BrowserRouter>

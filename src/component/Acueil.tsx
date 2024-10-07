@@ -15,7 +15,7 @@ const Acueil: React.FC = () => {
 
           <div className="slogan">
             <h1>
-              en GL3, à l'Institut Polytechnique DEFITECH. Je travaille actuellement comme
+            stagiaire à Quantum-Arise. Je travaille actuellement comme
               <span> Freelance </span>,
               <br />sur plusieurs projets
             </h1>
@@ -23,13 +23,13 @@ const Acueil: React.FC = () => {
             <h1>Education</h1>
             <ul>
               <li>UML et Mérise</li>
-              <li>Conception des bases de données</li>
-              <li>Développement Back-end des projets UML ou MERISE</li>
-              <li>Implémentation des interfaces Web et Mobile</li>
+              <li>Conception des bases de données Relationnelles</li>
+              <li>Développement Back-end .net C# et Java Spring Boot </li>
+              <li>Implémentation des interfaces Web avec React</li>
               <li>Machine learning et deep learning</li>
               <li>Git</li>
               <li>Un peu de connaissance en web design</li>
-              <li>Plusieurs autres formations non payantes sur OpenClassrooms et sur YouTube</li>
+             
             </ul>
             <button>CV <i className="fa-solid fa-download"></i></button>
             <br /><br /><br />

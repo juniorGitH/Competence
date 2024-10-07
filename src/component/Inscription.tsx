@@ -8,9 +8,7 @@ export default function Inscription() {
 
 
   const handleLinkClick = () => {
-    // Call the function without hooks directly if needed
-    // Example: ajouterClasse(index);
-    // Or update state if necessary
+   
     setSomeState("New Value"); // Change "New Value" to your new state value
   };
 

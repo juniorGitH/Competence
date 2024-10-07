@@ -4,7 +4,7 @@ import figma from '../img/figma.png';
 import c from '../img/c++.png';
 import node from '../img/node.png';
 import css from '../img/css.png';
-import kotlin from '../img/kotlin.png';
+import Cs from '../img/Cs.png';
 import html from '../img/html.png';
 import java from '../img/java.png';
 import python from '../img/py.png';
@@ -92,8 +92,8 @@ const Competences: React.FC = () => {
             <div className="skill-name">CSS</div>
           </div>
           <div className="skill">
-            <img src={kotlin} alt="Kotlin Logo" />
-            <div className="skill-name">Kotlin</div>
+            <img src={Cs} alt="Cs Logo" />
+            <div className="skill-name">C#</div>
           </div>
           <div className="skill">
             <img src={html} alt="HTML Logo" />
